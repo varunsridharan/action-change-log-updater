@@ -13,6 +13,8 @@ inputs:
   local_file:
     default: 'CHANGELOG.md'
     description: 'Documentation Github Repository Link'
+  github_token:
+    description: 'Github Personal Access Token'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -20,3 +22,4 @@ runs:
     - ${{ inputs.repo_name }}
     - ${{ inputs.remote_file }}
     - ${{ inputs.local_file }}
+    - ${{ inputs.github_token }}
