@@ -3,8 +3,8 @@
 set -eu
 
 DOCS_REPO_LINK="${INPUT_DOCS_REPO_LINK}"
-docs_change_log_file=$INPUT_docs_change_log_file
-local_change_log_file=$INPUT_local_change_log_file
+docs_change_log_file="${INPUT_DOCS_CHANGE_LOG_FILE}"
+local_change_log_file="${INPUT_LOCAL_CHANGE_LOG_FILE}"
 
 echo "Listing all files"
 ls -lah
