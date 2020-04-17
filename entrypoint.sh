@@ -8,8 +8,10 @@ DOCS_CHANGE_LOG_FILE="${INPUT_REMOTE_FILE}"
 DOCS_LOCAL_CHANGE_LOG_FILE="${INPUT_LOCAL_FILE}"
 GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-echo "Remote File : ${DOCS_CHANGE_LOG_FILE}"
-echo "Local File : ${DOCS_LOCAL_CHANGE_LOG_FILE}"
+echo "
+Remote File : ${DOCS_CHANGE_LOG_FILE}
+Local  File : ${DOCS_LOCAL_CHANGE_LOG_FILE}
+"
 
 echo "Setting Up!"
 cd ../../
