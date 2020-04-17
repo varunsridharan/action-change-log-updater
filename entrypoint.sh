@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-set -eo
+set -eu
 
 DOCS_REPO_LINK="${INPUT_DOCS_REPO_LINK}"
 docs_change_log_file=$INPUT_docs_change_log_file
