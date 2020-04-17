@@ -2,13 +2,15 @@
 
 set -eo
 
-docs_repo_link=$INPUT_DOCS_REPO_LINK
+DOCS_REPO_LINK=$INPUT_DOCS_REPO_LINK
 docs_change_log_file=$INPUT_docs_change_log_file
 local_change_log_file=$INPUT_local_change_log_file
 
-echo "$docs_repo_link"
-echo "$docs_change_log_file"
-echo "$local_change_log_file"
+echo "Listing all files"
+ls -lah
+
+echo "Var Details"
+echo "$DOCS_REPO_LINK"
 
 # Update Github Config.
 #git config --global user.email "githubactionbot+changelog@gmail.com" && git config --global user.name "Change Log Updater Github Bot"
