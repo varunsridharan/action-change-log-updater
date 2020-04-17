@@ -2,7 +2,7 @@
 
 set -eo
 
-DOCS_REPO_LINK=$INPUT_DOCS_REPO_LINK
+DOCS_REPO_LINK="${INPUT_DOCS_REPO_LINK}"
 docs_change_log_file=$INPUT_docs_change_log_file
 local_change_log_file=$INPUT_local_change_log_file
 
