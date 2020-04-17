@@ -21,6 +21,7 @@ cp $GITHUB_WORKSPACE/$DOCS_LOCAL_CHANGE_LOG_FILE ./$DOCS_CHANGE_LOG_FILE
 echo ""
 echo "New File"
 cat ./$DOCS_CHANGE_LOG_FILE
+
 # Update Github Config.
 #git config --global user.email "githubactionbot+changelog@gmail.com" && git config --global user.name "Change Log Updater Github Bot"
 
