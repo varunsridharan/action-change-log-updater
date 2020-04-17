@@ -32,4 +32,4 @@ git add -A
 git commit -m "Change Log Updated"
 
 # Push To Github
-git push "https://x-access-token:$GITHUB_TOKEN@github.com/$DOCS_REPO_NAME" HEAD:$BRANCH
+git push "https://x-access-token:$GITHUB_TOKEN@github.com/$DOCS_REPO_NAME"
