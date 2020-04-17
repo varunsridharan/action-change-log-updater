@@ -19,7 +19,7 @@ echo "Clone Documentation Github Repository"
 git clone $DOCS_REPO_LINK ./
 
 echo "Copying Change Log File"
-rm -rf $remote_change_log_file
+rm -rf $DOCS_CHANGE_LOG_FILE
 cp $GITHUB_WORKSPACE/$DOCS_LOCAL_CHANGE_LOG_FILE ./$DOCS_CHANGE_LOG_FILE
 
 # Update Github Config.
