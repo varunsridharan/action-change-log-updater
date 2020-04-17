@@ -1,14 +1,11 @@
 name: 'Change Log Updater'
 description: 'Updates My Pro Plugin's Change Log To Its Docs Repository In Github'
 author: 'varunsridharan'
-
 branding:
   icon: 'message-square'
   color: 'gray-dark'
-
 inputs:
   docs_repo_link:
-    default: ''
     description: 'Documentation Github Repository Link'
   docs_change_log_file:
     default: 'change-log.md'
@@ -16,7 +13,6 @@ inputs:
   local_change_log_file:
     default: 'CHANGELOG.md'
     description: 'Documentation Github Repository Link'
-
 runs:
   using: 'docker'
   image: 'Dockerfile'
