@@ -2,25 +2,26 @@
 
 set -eu
 
-DOCS_REPO_NAME="${INPUT_DOCS_REPO_LINK}"
+DOCS_REPO_NAME="${INPUT_REPO_NAME}"
 DOCS_REPO_LINK="https://github.com/${DOCS_REPO_NAME}"
-DOCS_CHANGE_LOG_FILE="${INPUT_DOCS_CHANGE_LOG_FILE}"
-DOCS_LOCAL_CHANGE_LOG_FILE="${INPUT_LOCAL_CHANGE_LOG_FILE}"
+DOCS_CHANGE_LOG_FILE="${INPUT_REMOTE_FILE}"
+DOCS_LOCAL_CHANGE_LOG_FILE="${INPUT_LOCAL_FILE}"
+echo "Vars"
+echo "DOCS_CHANGE_LOG_FILE : ${DOCS_CHANGE_LOG_FILE}"
+echo "DOCS_LOCAL_CHANGE_LOG_FILE : ${DOCS_LOCAL_CHANGE_LOG_FILE}"
+echo "DOCS_REPO_NAME : ${DOCS_REPO_NAME}"
 
-echo "Clone Documentation Github Repository"
+echo "Clone Remote Github Repository"
 cd ../../
 mkdir docs_repo
 cd docs_repo
 git clone $DOCS_REPO_LINK ./
 
-echo "Copying Latest Change Log File"
+echo "Copying File"
 rm -rf $remote_change_log_file
 cat ./$DOCS_CHANGE_LOG_FILE
 cp $GITHUB_WORKSPACE/$DOCS_LOCAL_CHANGE_LOG_FILE ./$DOCS_CHANGE_LOG_FILE
 
-echo ""
-echo "New File"
-cat ./$DOCS_CHANGE_LOG_FILE
 
 # Update Github Config.
 #git config --global user.email "githubactionbot+changelog@gmail.com" && git config --global user.name "Change Log Updater Github Bot"

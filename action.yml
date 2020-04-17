@@ -5,18 +5,18 @@ branding:
   icon: 'message-square'
   color: 'gray-dark'
 inputs:
-  docs_repo_link:
+  repo_name:
     description: 'Documentation Github Repository Link'
-  docs_change_log_file:
+  remote_file:
     default: 'change-log.md'
     description: 'Documentation Github Repository Link'
-  local_change_log_file:
+  local_file:
     default: 'CHANGELOG.md'
     description: 'Documentation Github Repository Link'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.docs_repo_link }}
-    - ${{ inputs.docs_change_log_file }}
-    - ${{ inputs.local_change_log_file }}
+    - ${{ inputs.repo_name }}
+    - ${{ inputs.remote_file }}
+    - ${{ inputs.local_file }}
