@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt-get update && apt-get install git -y
+RUN apk add git
 
 COPY entrypoint.sh /entrypoint.sh
 
