@@ -25,6 +25,7 @@ echo "Copying Change Log File"
 rm -rf $DOCS_CHANGE_LOG_FILE
 cp $GITHUB_WORKSPACE/$DOCS_LOCAL_CHANGE_LOG_FILE ./$DOCS_CHANGE_LOG_FILE
 
+something_changed=`git diff-index --exit-code --ignore-submodules HEAD`
 
 if [ -n "$something_changed" ]
   echo ">>> Nothing To Update"
