@@ -25,14 +25,20 @@ echo "Copying Change Log File"
 rm -rf $DOCS_CHANGE_LOG_FILE
 cp $GITHUB_WORKSPACE/$DOCS_LOCAL_CHANGE_LOG_FILE ./$DOCS_CHANGE_LOG_FILE
 
-# Update Github Config.
-git config --global user.email "githubactionbot+changelog@gmail.com" && git config --global user.name "Change Log Updater Github Bot"
 
-# Add File To Commit
-git add -A
+if [ -n "$something_changed" ]
+  echo ">>> Nothing To Update"
+then
+   # Update Github Config.
+  git config --global user.email "githubactionbot+changelog@gmail.com" && git config --global user.name "Change Log Updater Github Bot"
 
-# Add Commit Message
-git commit -m "Change Log Updated"
+  # Add File To Commit
+  git add -A
 
-# Push To Github
-git push "https://x-access-token:$GITHUB_TOKEN@github.com/$DOCS_REPO_NAME"
+  # Add Commit Message
+  git commit -m "Change Log Updated"
+
+  # Push To Github
+  git push "https://x-access-token:$GITHUB_TOKEN@github.com/$DOCS_REPO_NAME"
+
+fi
