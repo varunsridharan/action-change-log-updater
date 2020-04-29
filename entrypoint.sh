@@ -3,10 +3,10 @@
 set -eu
 
 DOCS_REPO_NAME="${INPUT_REPO_NAME}"
-DOCS_REPO_LINK="https://x-access-token:$GITHUB_TOKEN@github.com/${DOCS_REPO_NAME}"
 DOCS_CHANGE_LOG_FILE="${INPUT_REMOTE_FILE}"
 DOCS_LOCAL_CHANGE_LOG_FILE="${INPUT_LOCAL_FILE}"
 GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}"
+DOCS_REPO_LINK="https://x-access-token:$GITHUB_TOKEN@github.com/${DOCS_REPO_NAME}"
 
 echo "
 ------------------------------------------------
