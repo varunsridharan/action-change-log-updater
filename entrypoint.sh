@@ -3,14 +3,18 @@
 set -eu
 
 DOCS_REPO_NAME="${INPUT_REPO_NAME}"
-DOCS_REPO_LINK="https://github.com/${DOCS_REPO_NAME}"
+DOCS_REPO_LINK="https://x-access-token:$GITHUB_TOKEN@github.com/${DOCS_REPO_NAME}"
 DOCS_CHANGE_LOG_FILE="${INPUT_REMOTE_FILE}"
 DOCS_LOCAL_CHANGE_LOG_FILE="${INPUT_LOCAL_FILE}"
 GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 echo "
-Remote File : ${DOCS_CHANGE_LOG_FILE}
-Local  File : ${DOCS_LOCAL_CHANGE_LOG_FILE}
+------------------------------------------------
+Repo Name : ${DOCS_REPO_NAME}                  |
+Repo Link : ${DOCS_REPO_LINK}                  |
+Remote File : ${DOCS_CHANGE_LOG_FILE}          |
+Local  File : ${DOCS_LOCAL_CHANGE_LOG_FILE}    |
+------------------------------------------------
 "
 
 echo "🔧 Setting Up"
@@ -32,6 +36,7 @@ else
   git config --global user.email "githubactionbot+changelog@gmail.com" && git config --global user.name "Change Log Updater Github Bot"
   git add -A
   git commit -m "👌 Change Log Updated / ⚡ Triggered By $GITHUB_SHA"
-  git push "https://x-access-token:$GITHUB_TOKEN@github.com/$DOCS_REPO_NAME"
+  #git push "https://x-access-token:$GITHUB_TOKEN@${DOCS_REPO_LINK}"
+  git push ${DOCS_REPO_LINK}
   echo "👌 Update Complete"
 fi
